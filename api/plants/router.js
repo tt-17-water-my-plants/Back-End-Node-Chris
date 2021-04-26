@@ -15,7 +15,7 @@ router.get('/:id', validateUserId, verifyToken, (req, res, next) => {
 
 	Plants.getById(id)
 		.then((userPlants) => {
-			res.status(200).json(userPlants);
+			res.json(userPlants);
 		})
 		.catch((e) => {
 			next(e);
@@ -47,7 +47,7 @@ router.put(
 		const { id } = req.params;
 		Plants.editPlant(req.body, id)
 			.then(() => {
-				res.status(200).json({ message: 'Plant updated successfully' });
+				res.json({ message: 'Plant updated successfully' });
 			})
 			.catch((e) => {
 				next(e);
@@ -60,7 +60,7 @@ router.delete('/:id', validatePlantId, verifyToken, (req, res, next) => {
 
 	Plants.deletePlant(id)
 		.then(() => {
-			res.status(200).json({ message: 'Plant deleted successfully.' });
+			res.json({ message: 'Plant deleted successfully.' });
 		})
 		.catch((e) => {
 			next(e);

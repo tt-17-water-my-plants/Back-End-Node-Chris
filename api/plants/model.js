@@ -8,7 +8,8 @@ function getById(id) {
 			'p.plant_id',
 			'p.nickname',
 			'p.species',
-			'p.h2oFrequency'
+			'p.h2oFrequency',
+			'p.image_url'
 		)
 		.where('u.user_id', id);
 }
