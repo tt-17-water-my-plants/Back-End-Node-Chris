@@ -4,7 +4,7 @@
 
 https://water-my-plants-tt17-chris.herokuapp.com
 
-| Routes     | Endpoints               | Description                                                                                                                               |
+| Verbs      | Endpoints               | Description                                                                                                                               |
 | ---------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Users**  |                         |                                                                                                                                           |
 | **GET**    | _/api/users_            | List of all users                                                                                                                         |
