@@ -10,11 +10,15 @@
 		"migrate": "npx knex migrate:latest",
 		"rollback": "npx knex migrate:rollback",
 		"seed": "npx knex seed:run",
-		"migrateh": "heroku run knex migrate:latest -a greenthumbs-tt17",
-		"rollbackh": "heroku run knex migrate:rollback -a greenthumbs-tt17",
-		"databaseh": "heroku pg:psql -a greenthumbs-tt17",
-		"seedh": "heroku run knex seed:run -a greenthumbs-tt17",
+		"migrateh": "heroku run knex migrate:latest -a water-my-plants-tt17-chris",
+		"rollbackh": "heroku run knex migrate:rollback -a water-my-plants-tt17-chris",
+		"databaseh": "heroku pg:psql -a water-my-plants-tt17-chris",
+		"seedh": "heroku run knex seed:run -a water-my-plants-tt17-chris",
 		"deploy": "git push heroku main"
+	},
+	"engines": {
+		"node": "14.15.4",
+		"npm": "6.14.11"
 	},
 	"repository": {
 		"type": "git",
@@ -28,16 +32,16 @@
 	"homepage": "https://github.com/tt-17-water-my-plants/Back-End-Node-Chris#readme",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
-		"cors": "^2.8.5",
+		"cors": "=2.8.5",
 		"cross-env": "^7.0.3",
-		"dotenv": "^8.2.0",
-		"express": "^4.17.1",
-		"helmet": "^4.4.1",
+		"dotenv": "=8.2.0",
+		"express": "=4.17.1",
+		"helmet": "=4.4.1",
 		"jsonwebtoken": "^8.5.1",
-		"knex": "^0.21.18",
-		"knex-cleaner": "^1.3.1",
+		"knex": "=0.21.18",
+		"knex-cleaner": "=1.3.1",
 		"path": "^0.12.7",
-		"pg": "^8.5.1"
+		"pg": "=8.5.1"
 	},
 	"devDependencies": {
 		"@types/jest": "^26.0.20",
