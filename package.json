@@ -1,0 +1,22 @@
+{
+  "name": "back-end-node-chris",
+  "version": "1.0.0",
+  "description": "back-end-node-chris",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tt-17-water-my-plants/Back-End-Node-Chris.git"
+  },
+  "author": "FullStackCaveman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tt-17-water-my-plants/Back-End-Node-Chris/issues"
+  },
+  "homepage": "https://github.com/tt-17-water-my-plants/Back-End-Node-Chris#readme",
+  "devDependencies": {
+    "eslint": "^7.25.0"
+  }
+}
