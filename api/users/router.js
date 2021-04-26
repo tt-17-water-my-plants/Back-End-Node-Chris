@@ -16,7 +16,7 @@ const checkUsername = require('../middleware/checkUsername');
 const verifyToken = require('../middleware/verifyToken');
 const { validateUserId } = require('../middleware/idValidaters');
 
-router.get('/', (_, res, next) => {
+router.get('/', (_req, res, next) => {
 	Users.getAll()
 		.then((users) => {
 			res.status(200).json(users);
@@ -58,9 +58,7 @@ router.post('/login', loginChecker, async (req, res) => {
 
 	if (tryUser && bcrypt.compareSync(password, tryUser.password)) {
 		const token = createToken(tryUser);
-		res
-			.status(200)
-			.json({ message: 'Login Successful', token, user_id: tryUser.user_id });
+		res.json({ message: 'Login Successful', token, user_id: tryUser.user_id });
 	} else {
 		res.status(401).json({ message: 'Invalid Credentials' });
 	}
@@ -73,13 +71,13 @@ router.put(
 	verifyToken,
 	(req, res, next) => {
 		const { id } = req.params;
-		let changes = req.body;
-		const hashedPass = bcrypt.hashSync(changes.password, 8);
-		changes.password = hashedPass;
+		let updates = req.body;
+		const hashedPass = bcrypt.hashSync(updates.password, 8);
+		updates.password = hashedPass;
 
-		Users.editUser(changes, id)
+		Users.editUser(updates, id)
 			.then(() => {
-				res.status(200).json({ message: 'User updated successfully' });
+				res.json({ message: 'User updated successfully' });
 			})
 			.catch((e) => {
 				next(e);
