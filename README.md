@@ -4,6 +4,7 @@
 
 https://water-my-plants-tt17-chris.herokuapp.com
 
+| ------ | ------ | ------ |
 | **Users** | | |
 | **GET** | _/api/users_ | List of all users |
 | **GET** | _/api/users/:id_ | User info for the given user*id |
