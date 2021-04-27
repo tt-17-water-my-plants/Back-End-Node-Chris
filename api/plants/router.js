@@ -17,8 +17,8 @@ router.get('/:id', validateUserId, verifyToken, (req, res, next) => {
 		.then((userPlants) => {
 			res.json(userPlants);
 		})
-		.catch((e) => {
-			next(e);
+		.catch((err) => {
+			next(err);
 		});
 });
 
@@ -32,8 +32,8 @@ router.post(
 			.then((plant) => {
 				return res.status(201).json(plant);
 			})
-			.catch((e) => {
-				next(e);
+			.catch((err) => {
+				next(err);
 			});
 	}
 );
@@ -49,8 +49,8 @@ router.put(
 			.then(() => {
 				res.json({ message: 'Plant updated successfully' });
 			})
-			.catch((e) => {
-				next(e);
+			.catch((err) => {
+				next(err);
 			});
 	}
 );
@@ -62,8 +62,8 @@ router.delete('/:id', validatePlantId, verifyToken, (req, res, next) => {
 		.then(() => {
 			res.json({ message: 'Plant deleted successfully.' });
 		})
-		.catch((e) => {
-			next(e);
+		.catch((err) => {
+			next(err);
 		});
 });
 

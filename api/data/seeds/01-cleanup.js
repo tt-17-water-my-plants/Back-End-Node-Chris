@@ -7,7 +7,7 @@ function cleanTables(knex) {
 			restartIdentity: true, // ask PostgreSQL to reset the Primary Keys to 0
 			ignoreTables: ['knex_migrations', 'knex_migrations_lock'],
 		})
-		.then(() => console.log('All tables truncated, ready to seed!'));
+		.then(() => console.log('All tables ready to seed!'));
 }
 
 exports.seed = function (knex) {

@@ -1,10 +1,3 @@
-module.exports = {
-	registerChecker,
-	loginChecker,
-	userEditChecker,
-	plantChecker,
-};
-
 function registerChecker(req, res, next) {
 	const { username, password, phone_number } = req.body;
 
@@ -48,3 +41,10 @@ function plantChecker(req, res, next) {
 		next();
 	}
 }
+
+module.exports = {
+	registerChecker,
+	loginChecker,
+	userEditChecker,
+	plantChecker,
+};

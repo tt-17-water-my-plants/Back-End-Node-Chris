@@ -21,8 +21,8 @@ router.get('/', (_req, res, next) => {
 		.then((users) => {
 			res.status(200).json(users);
 		})
-		.catch((e) => {
-			next(e);
+		.catch((err) => {
+			next(err);
 		});
 });
 
@@ -33,8 +33,8 @@ router.get('/:id', validateUserId, (req, res, next) => {
 		.then((user) => {
 			res.status(200).json(user);
 		})
-		.catch((e) => {
-			next(e);
+		.catch((err) => {
+			next(err);
 		});
 });
 
@@ -47,8 +47,8 @@ router.post('/register', registerChecker, checkUsername, (req, res, next) => {
 		.then((addedUser) => {
 			return res.status(201).json(addedUser);
 		})
-		.catch((e) => {
-			next(e);
+		.catch((err) => {
+			next(err);
 		});
 });
 
@@ -79,8 +79,8 @@ router.put(
 			.then(() => {
 				res.json({ message: 'User updated successfully' });
 			})
-			.catch((e) => {
-				next(e);
+			.catch((err) => {
+				next(err);
 			});
 	}
 );
