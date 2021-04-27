@@ -19,7 +19,7 @@ const { validateUserId } = require('../middleware/idValidaters');
 router.get('/', (_req, res, next) => {
 	Users.getAll()
 		.then((users) => {
-			res.status(200).json(users);
+			res.json(users);
 		})
 		.catch((err) => {
 			next(err);
@@ -31,7 +31,7 @@ router.get('/:id', validateUserId, (req, res, next) => {
 
 	Users.getById(id)
 		.then((user) => {
-			res.status(200).json(user);
+			res.json(user);
 		})
 		.catch((err) => {
 			next(err);
